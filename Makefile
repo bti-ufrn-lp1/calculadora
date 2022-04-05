@@ -42,10 +42,10 @@ all: $(PROG)
 # Alvo para a construção do executável
 # Ligação dos arquivos objeto (.o) definidos como dependências
 $(PROG): $(BUILD_DIR)/calculadora.o $(BUILD_DIR)/main.o
-	@echo "Ligando o alvo $@"
+	@echo "> Gerando '$@'"
 	$(MKDIR) -p $(BIN_DIR)
 	$(CC) $(FLAGS) -o $(BIN_DIR)/$@ $^
-	@echo "Executavel '$@' criado em $(BIN_DIR)"
+	@echo "> Executavel '$@' criado em $(BIN_DIR)"
 
 # Alvo para a construção do arquivo objeto calculadora.o
 # Compilação dos arquivos fonte definidos como dependências
