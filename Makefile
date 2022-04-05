@@ -36,15 +36,8 @@ PROG=calculadora
 # Opções de compilação
 FLAGS=-W -Wall -pedantic -std=c++11 -I. -I$(INCLUDE_DIR)
 
-# Garantia de que os alvos desta lista não sejam confundidos com arquivos de mesmo nome
-.PHONY: all clean doxy debug doc
-
 # Alvo para a compilação completa, removendo os arquivos objeto gerados ao final
 all: $(PROG)
-
-# Alvo adicionando flags para depuração
-debug: FLAGS += -g -O0
-debug: $(PROG)
 
 # Alvo para a construção do executável
 # Ligação dos arquivos objeto (.o) definidos como dependências
@@ -66,6 +59,9 @@ $(BUILD_DIR)/main.o: main.cpp
 	$(MKDIR) -p $(BUILD_DIR)
 	$(CC) -c $(FLAGS) -o $@ $<
 
+# Garantia de que os alvos desta lista não sejam confundidos com arquivos de mesmo nome
+.PHONY: all clean doxy debug doc
+
 # Alvos para a geração automática de documentação de código fonte com Doxygen
 # Remove sempre a documentação anterior (caso exista) e gera uma nova versão
 doxy:
@@ -73,6 +69,10 @@ doxy:
 	doxygen -g
 doc:
 	doxygen
+
+# Alvo adicionando flags para depuração
+debug: FLAGS += -g -O0
+debug: $(PROG)
 
 # Alvo para limpar arquivos temporários (objeto) gerados durante a compilação,
 # assim como os arquivos executáveis
