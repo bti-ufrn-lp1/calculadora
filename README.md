@@ -71,3 +71,4 @@ Finalmente, para executar o programa gerado por qualquer um desses dois processo
 ```bash
  ./bin/calculadora
 ```
+Nesse caso, o programa irá exibir na saída padrão o resultado da execução das quatro operações aritméticas para os valores predefinidos na implementação.
