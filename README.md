@@ -38,10 +38,14 @@ Neste repositório, há dois tipos de *makefile*:
 - [CMake](https://cmake.org), para a geração automática de *makefiles*
 
 ## Download, compilação e execução do programa
-No terminal do sistema operacional, insira o seguinte comando para realizar o *download* da implementação a partir deste repositório Git:
+No terminal do sistema operacional, insira os seguintes comandos para realizar o *download* da implementação a partir deste repositório Git e navegar para o diretório resultante:
 
 ```bash
+ # Download da implementação a partir do repositório Git
  git clone https://github.com/bti-ufrn-lp1/calculadora.git
+ 
+ # Navegação para o diretório
+ cd calculadora
 ```
 Caso se queira utilizar o *makefile* escrito manualmente, insira o seguinte comando no terminal do sistema operacional para compilar o programa:
 
